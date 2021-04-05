@@ -43,18 +43,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
-                                        <?php
+                                    <?php
                                         $array = array("reports file" => "Reports",
                                                        "analytics graphs" => "Analytics",
                                                        "export download" => "Export",
                                                        "storage" => "Storage");
-                                        foreach ($array as $item => $value) {
-                                            echo "<li class='list-group-item'>
-                                                        <span data-filter-tags='$item'>$value</span>
-                                                    </li>";
-                                        }
-                                        ?>
+                                    ?>
+                                    <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
+                                        <?php foreach($array as $item => $value):?>
+                                        <li class="list-group-item">
+                                            <span data-filter-tags="<?php echo $item;?>">
+                                                <?php echo $value;?>
+                                            </span>
+                                        </li>
+                                        <?php endforeach; ?>
                                     </ul>
                                     <div class="filter-message js-filter-message mt-0 fs-sm"></div>
                                 </div>
