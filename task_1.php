@@ -44,18 +44,17 @@
                                         </div>
                                     </div>
                                     <ul id="js-list-msg" class="list-group px-2 pb-2 js-list-filter">
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="reports file">Reports</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="analytics graphs">Analytics</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="export download">Export</span>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span data-filter-tags="storage">Storage</span>
-                                        </li>
+                                        <?php
+                                        $array = array("reports file" => "Reports",
+                                                       "analytics graphs" => "Analytics",
+                                                       "export download" => "Export",
+                                                       "storage" => "Storage");
+                                        foreach ($array as $item => $value) {
+                                            print "<li class='list-group-item'>
+                                                        <span data-filter-tags='$item'>$value</span>
+                                                    </li>" . PHP_EOL;
+                                        }
+                                        ?>
                                     </ul>
                                     <div class="filter-message js-filter-message mt-0 fs-sm"></div>
                                 </div>
