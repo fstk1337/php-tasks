@@ -55,13 +55,15 @@
                         ?>
                             <ol class="breadcrumb page-breadcrumb">
                                 <?php foreach ($items as $item):?>
-                                <li class="breadcrumb-item<?php if ($item["active"] == "yes") echo " active"?>">
-                                    <?php if ($item["link"] != ""): ?>
-                                    <a href="<?php echo $item["link"] ?>"><?php echo $item["text"]?></a>
+                                    <?php if ($item["active"] == "yes"): ?>
+                                        <li class="breadcrumb-item active">
+                                            <?php echo $item["text"]?>
+                                        </li>
                                     <?php else: ?>
-                                    <?php echo $item["text"]?>
+                                        <li class="breadcrumb-item">
+                                            <a href="<?php echo $item["link"] ?>"><?php echo $item["text"]?></a>
+                                        </li>
                                     <?php endif; ?>
-                                </li>
                                 <?php endforeach;?>
                             </ol>
                         </div>
