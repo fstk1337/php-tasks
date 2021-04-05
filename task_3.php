@@ -32,10 +32,37 @@
                     </div>
                     <div class="panel-container show">
                         <div class="panel-content">
+                        <?php
+                            $items = [
+                                [
+                                  "active" => "no",
+                                  "link" => "#",
+                                  "text" => "Главная"
+                                ],
+
+                                [
+                                    "active" => "no",
+                                    "link" => "#",
+                                    "text" => "PHP"
+                                ],
+
+                                [
+                                    "active" => "yes",
+                                    "link" => "",
+                                    "text" => "Функции"
+                                ],
+                            ];
+                        ?>
                             <ol class="breadcrumb page-breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Главная</a></li>
-                                <li class="breadcrumb-item"><a href="#">PHP</a></li>
-                                <li class="breadcrumb-item active">Функции</li>
+                                <?php foreach ($items as $item):?>
+                                <li class="breadcrumb-item<?php if ($item["active"] == "yes") echo " active"?>">
+                                    <?php if ($item["link"] != ""): ?>
+                                    <a href="<?php echo $item["link"] ?>"><?php echo $item["text"]?></a>
+                                    <?php else: ?>
+                                    <?php echo $item["text"]?>
+                                    <?php endif; ?>
+                                </li>
+                                <?php endforeach;?>
                             </ol>
                         </div>
                     </div>
