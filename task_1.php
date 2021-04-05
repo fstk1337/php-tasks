@@ -50,9 +50,9 @@
                                                        "export download" => "Export",
                                                        "storage" => "Storage");
                                         foreach ($array as $item => $value) {
-                                            print "<li class='list-group-item'>
+                                            echo "<li class='list-group-item'>
                                                         <span data-filter-tags='$item'>$value</span>
-                                                    </li>" . PHP_EOL;
+                                                    </li>";
                                         }
                                         ?>
                                     </ul>
